@@ -17,11 +17,11 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<UserEntity> login(@RequestBody LoginRequest loginRequest) {
-        UserEntity user = new  UserEntity();
-        user.setEmail(loginRequest.getEmail());
-        user.setPassword(loginRequest.getPassword());
-        user.setFullname("hdgjkadf");
-        userRepository.save(user);
+//        UserEntity user = new  UserEntity();
+//        user.setEmail(loginRequest.getEmail());
+//        user.setPassword(loginRequest.getPassword());
+//        user.setFullname("hdgjkadf");
+//        userRepository.save(user);
         if (!userRepository.existsByEmail(loginRequest.getEmail())) {
             throw new RuntimeException("Email không tồn tại hoặc không đúng định dạng");
         }
